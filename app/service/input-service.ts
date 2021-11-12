@@ -32,6 +32,7 @@ export class InputService {
         var input2 = new Input(i.name,i.amount,i.type,i.occurrence,date);
         this.inputs.push(input2);
     }
+    this.inputs.sort((a,b) => (a.date > b.date) ? 1 : -1);
     return this.inputs;
   }
 
