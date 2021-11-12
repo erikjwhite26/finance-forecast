@@ -1,0 +1,13 @@
+<h2 mat-dialog-title>Input List</h2>
+<div mat-dialog-content class="input-list-dialog">
+    <div *ngFor="let i of inputs">
+        <div>
+            <h4>{{i.name}}</h4>
+            <h4 [ngStyle]="{'color': i.type == 'Income' ? 'green' : 'red'}">{{i.amount | currency}}</h4>
+            <h4>{{i.date | date:'shortDate'}}</h4>
+        </div>
+    </div>
+</div>
+<div mat-dialog-actions>
+    <button mat-raised-button type="reset" color="accent" (click)="close()">Cancel</button>
+</div>

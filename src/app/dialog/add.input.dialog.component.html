@@ -1,0 +1,39 @@
+<h2 mat-dialog-title>Add Input</h2>
+<div mat-dialog-content>
+    <form>
+        <mat-form-field appearance="fill">
+            <mat-label>Name</mat-label>
+            <input name="name" matInput currency-mask value="" [(ngModel)]="input.name">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Amount</mat-label>
+            <input name="amount" matInput mvndrMatCurrencyFormat placeholder="100" value="" [(ngModel)]="input.amount">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Type</mat-label>
+            <mat-select id="input-type-select" name="type" [(ngModel)]="input.type" matNativeControl required>
+            <mat-option *ngFor="let t of types" [value]="t">
+                {{t}}
+            </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Occurrence</mat-label>
+            <mat-select id="occurrence" name="input-occurrence-select" [(ngModel)]="input.occurrence" matNativeControl required>
+            <mat-option *ngFor="let o of occurrences" [value]="o">
+                {{o}}
+            </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Transaction Date</mat-label>
+            <input name="date" matInput [matDatepicker]="picker" [(ngModel)]="input.date">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+    </form>
+</div>
+<div mat-dialog-actions>
+    <button mat-raised-button color="primary" (click)="save()">Submit</button>
+    <button mat-raised-button type="reset" color="accent" (click)="close()">Cancel</button>
+</div>
