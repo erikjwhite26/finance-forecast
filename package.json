@@ -12,7 +12,7 @@
     "registry":"https://npm.pkg.github.com"
   },
   "repository": {
-    "url": "git://erikjwhite26.github.io/finance-forecast/"
+    "url": "git://github.com/erikjwhite26/finance-forecast.git"
   },
   "dependencies": {
     "@angular/animations": "~12.2.0",
